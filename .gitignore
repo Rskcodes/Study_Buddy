@@ -2,6 +2,12 @@ venv/
 __pycache__/
 *.pyc
 *.zip
-models/t5-notes-summarizer/
-models/roberta-doubt-solver/
-models/Valhalla-quiz-generator/
+models/roberta-doubt-solver/config.json
+models/roberta-doubt-solver/model.safetensors
+models/roberta-doubt-solver/tokenizer_config.json
+models/roberta-doubt-solver/tokenizer.json
+models/t5-notes-summarizer/config.json
+models/t5-notes-summarizer/model.safetensors
+models/t5-notes-summarizer/generation_config.json
+models/t5-notes-summarizer/tokenizer.json
+models/t5-notes-summarizer/tokenizer_config.json
