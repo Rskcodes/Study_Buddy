@@ -1,4 +1,3 @@
-# routes/upload.py
 import os
 import fitz  # PyMuPDF
 import pytesseract
