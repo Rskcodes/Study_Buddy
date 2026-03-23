@@ -1,3 +1,9 @@
 transformers 
 datasets
 sentencepiece
+fastapi
+uvicorn
+python-multipart
+pymupdf
+pytesseract
+Pillow

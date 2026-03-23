@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes.notes import router as notes_router
+from routes.doubt import router as doubt_router
+from routes.upload import router as upload_router
 
 app = FastAPI(
-    title="StudyB_uddy API",
-    description="AI powered study assistant",
+    title="Study_Buddy API",
+    description="Study assistant",
     version="1.0.0"
 )
 
@@ -17,6 +19,8 @@ app.add_middleware(
 )
 # routes
 app.include_router(notes_router)
+app.include_router(doubt_router)
+app.include_router(upload_router)
 
 @app.get("/")
 def home():
