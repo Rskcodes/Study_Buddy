@@ -1,3 +1,7 @@
 venv/
 __pycache__/
 *.pyc
+*.zip
+models/t5-notes-summarizer/
+models/roberta-doubt-solver/
+models/Valhalla-quiz-generator/
