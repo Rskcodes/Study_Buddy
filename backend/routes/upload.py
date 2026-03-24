@@ -1,24 +1,13 @@
 import os
-import fitz  # PyMuPDF
+import tempfile
 import pytesseract
-from PIL import Image
+
 from fastapi import APIRouter, UploadFile, File
 from fastapi.responses import JSONResponse
-import tempfile
+from utils.pdf import extract_text_from_pdf
+from utils.ocr import extract_text_from_image
 
 router = APIRouter()
-
-def extract_text_from_pdf(file_path):
-    text = ""
-    doc = fitz.open(file_path)
-    for page in doc:
-        text += page.get_text()
-    return text.strip()
-
-def extract_text_from_image(file_path):
-    image = Image.open(file_path)
-    text = pytesseract.image_to_string(image)
-    return text.strip()
 
 @router.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
@@ -39,7 +28,7 @@ async def upload_file(file: UploadFile = File(...)):
         else:
             return JSONResponse(
                 status_code=400,
-                content={"error": "Sirf PDF ya image upload karo!"}
+                content={"error": "Only PDF or image files are allowed!"}
             )
     finally:
         os.unlink(tmp_path)  # Temp file delete karo
