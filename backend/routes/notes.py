@@ -1,4 +1,3 @@
-# routes/notes.py
 import os
 import re
 from fastapi import APIRouter
