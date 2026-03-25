@@ -11,3 +11,4 @@ models/roberta-doubt-solver/*.safetensors
 models/Valhalla-quiz-generator/*.json
 models/Valhalla-quiz-generator/*.bin
 models/Valhalla-quiz-generator/*.safetensors
+node_modules/
